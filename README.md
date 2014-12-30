@@ -9,7 +9,7 @@ It will replace the success and fail callbacks with promises.
 
 #Install
 ##via bower:
-bower install git://github.com/konstantinkrassmann/ngCordova-nfc --save-dev
+```bower install git://github.com/konstantinkrassmann/ngCordova-nfc --save-dev```
 
 #How it works:
 1.Set as dependency of your application
