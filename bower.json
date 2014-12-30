@@ -7,12 +7,5 @@
   ],
   "description": "ngCordova Wrapper for cordova-plugin-nfc feature",
   "main": "nfc.js",
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "license": "MIT"
 }
