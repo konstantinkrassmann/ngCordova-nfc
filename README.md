@@ -16,8 +16,12 @@ It will replace the success and fail callbacks with promises.
 ``` javascript
 angular.module("myApp", ["ngCordova.plugins.nfc"]);
 ```
+2.Include into application:
+``` html
+<script src="lib/ngCordova-nfc/nfc.js"></script>
+```
 
-2.Use in componentens:
+3.Use in componentens:
 ``` javascript
 app.controller("StartCtrl", function($cordovaNfc){
 
@@ -26,11 +30,19 @@ app.controller("StartCtrl", function($cordovaNfc){
    $cordovaNfc.then(function(nfcInstance){
 
         //Use the plugins interface as you go, in a more "angular" way
-        nfcInstance.addNdefListener(function(event){
-            console.log("success");
-        }, function(event){
+      $cordovaNfcInstance.addNdefListener(function(event){
+            //Callback when ndef got triggered
+      })
+      .then(
+        //Success callback
+        function(event){
+            console.log("bound success");
+        },
+        //Fail callback
+        function(err){
             console.log("error");
-        });
+        }
+      );
    })
 });
 ```
