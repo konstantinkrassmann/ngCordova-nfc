@@ -5,7 +5,23 @@
  * See LICENSE in this repository for license information
  */
 angular.module("ngCordova.plugins.nfc", [])
-    .factory('$cordovaNfc', ['$q', '$window', function ($q) {
+    .factory('$cordovaNfcNDef', ['$q','$window', function($q, $window){
+        var q = $q.defer();
+
+        document.addEventListener('deviceready', function() {
+            q.resolve($window.ndef);
+        });
+        return q.promise;
+    }])
+    .factory('$cordovaNfcUtil', ['$q','$window', function($q, $window){
+        var q = $q.defer();
+
+        document.addEventListener('deviceready', function() {
+            q.resolve($window.util);
+        });
+        return q.promise;
+    }])
+    .factory('$cordovaNfc', ['$q', function ($q) {
         var q = $q.defer();
 
         document.addEventListener('deviceready', function(){

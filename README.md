@@ -19,7 +19,7 @@ angular.module("myApp", ["ngCordova.plugins.nfc"]);
 
 2.Use in componentens:
 ``` javascript
-app.controller("StartCtrl", function($cordovaNfc){
+app.controller("StartCtrl", function($cordovaNfc, $cordovaNfcUtil){
 
   //Because of the problem about the async-ness of the nfc plugin, we need to wait
   //for it to be ready.
@@ -31,6 +31,10 @@ app.controller("StartCtrl", function($cordovaNfc){
         }, function(event){
             console.log("error");
         });
-   })
+   });
+
+   $cordovaNfcUtil.then(function(nfcUtil){
+        console.log( nfcUtil.bytesToString("some bytes") )
+   });
 });
 ```
