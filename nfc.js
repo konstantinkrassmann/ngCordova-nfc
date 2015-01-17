@@ -170,7 +170,7 @@ angular.module("ngCordova.plugins.nfc", [])
 
                         if(typeof nfc != "undefined")
                         {
-                            nfc.removeMimeTypeListener(callback, q.resolve, q.reject);
+                            nfc.removeMimeTypeListener(mimeType, callback, q.resolve, q.reject);
                         }else
                             q.reject("nfc plugin not defined");
 
