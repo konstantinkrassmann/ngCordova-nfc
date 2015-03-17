@@ -30,7 +30,7 @@ app.controller("StartCtrl", function($cordovaNfc, $cordovaNfcUtil){
    $cordovaNfc.then(function(nfcInstance){
 
         //Use the plugins interface as you go, in a more "angular" way
-      $cordovaNfcInstance.addNdefListener(function(event){
+      nfcInstance.addNdefListener(function(event){
             //Callback when ndef got triggered
       })
       .then(
