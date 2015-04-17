@@ -12,19 +12,22 @@ It will replace the success and fail callbacks with promises.
 ```bower install git://github.com/konstantinkrassmann/ngCordova-nfc --save-dev```
 
 #How it works:
-1.Set as dependency of your application
+Set as dependency of your application
 ``` javascript
 angular.module("myApp", ["ngCordova.plugins.nfc"]);
 ```
-2.Include into application:
+
+Include into application:
 ``` html
 <script src="lib/ngCordova-nfc/nfc.js"></script>
 ```
-3. Make sure you have the phone-gap nfc plugin installed (can be used for cordova, too)
+
+Make sure you have the phone-gap nfc plugin installed (can be used for cordova, too)
 ```
 cordova plugin add https://github.com/chariotsolutions/phonegap-nfc
 ```
-4.Use in componentens:
+
+Use in componentens:
 ``` javascript
 app.controller("StartCtrl", function($cordovaNfc, $cordovaNfcUtil){
 
