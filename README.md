@@ -20,8 +20,11 @@ angular.module("myApp", ["ngCordova.plugins.nfc"]);
 ``` html
 <script src="lib/ngCordova-nfc/nfc.js"></script>
 ```
-
-3.Use in componentens:
+3. Make sure you have the phone-gap nfc plugin installed (can be used for cordova, too)
+```
+cordova plugin add https://github.com/chariotsolutions/phonegap-nfc
+```
+4.Use in componentens:
 ``` javascript
 app.controller("StartCtrl", function($cordovaNfc, $cordovaNfcUtil){
 
