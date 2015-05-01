@@ -154,6 +154,18 @@ angular.module("ngCordova.plugins.nfc", [])
 
                         return q.promise;
                     },
+                    enabled: function()
+                    {
+                        var q = $q.defer();
+
+                        if(typeof nfc != "undefined")
+                        {
+                            nfc.enabled(q.resolve, q.reject);
+                        }else
+                            q.reject("nfc plugin not defined");
+
+                        return q.promise;
+                    },
                     removeTagDiscoveredListener: function (callback) {
                         var q = $q.defer();
 
